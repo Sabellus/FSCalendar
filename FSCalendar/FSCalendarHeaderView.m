@@ -179,6 +179,7 @@
     [_collectionView reloadData];
 }
 
+
 - (void)configureCell:(FSCalendarHeaderCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     FSCalendarAppearance *appearance = self.calendar.appearance;
@@ -217,6 +218,59 @@
             break;
         }
     }
+    
+    NSArray* foo = [text componentsSeparatedByString: @" "];
+    NSString* firstBit = [foo objectAtIndex: 0];
+    
+    if ([firstBit isEqualToString:@"января"]) {
+        firstBit = @"январь ";
+        text = [firstBit stringByAppendingString:[foo objectAtIndex: 1]];
+    }
+    if ([firstBit isEqualToString:@"февраля"]) {
+        firstBit = @"февраль ";
+        text = [firstBit stringByAppendingString:[foo objectAtIndex: 1]];
+    }
+    if ([firstBit isEqualToString:@"марта"]) {
+        firstBit = @"март ";
+        text = [firstBit stringByAppendingString:[foo objectAtIndex: 1]];
+    }
+    if ([firstBit isEqualToString:@"апреля"]) {
+        firstBit = @"апрель ";
+        text = [firstBit stringByAppendingString:[foo objectAtIndex: 1]];
+    }
+    if ([firstBit isEqualToString:@"мая"]) {
+        firstBit = @"май ";
+        text = [firstBit stringByAppendingString:[foo objectAtIndex: 1]];
+    }
+    if ([firstBit isEqualToString:@"июня"]) {
+        firstBit = @"июнь ";
+        text = [firstBit stringByAppendingString:[foo objectAtIndex: 1]];
+    }
+    if ([firstBit isEqualToString:@"июля"]) {
+        firstBit = @"июль ";
+        text = [firstBit stringByAppendingString:[foo objectAtIndex: 1]];
+    }
+    if ([firstBit isEqualToString:@"августа"]) {
+        firstBit = @"август ";
+        text = [firstBit stringByAppendingString:[foo objectAtIndex: 1]];
+    }
+    if ([firstBit isEqualToString:@"сентября"]) {
+        firstBit = @"сентябрь ";
+        text = [firstBit stringByAppendingString:[foo objectAtIndex: 1]];
+    }
+    if ([firstBit isEqualToString:@"октября"]) {
+        firstBit = @"октябрь ";
+        text = [firstBit stringByAppendingString:[foo objectAtIndex: 1]];
+    }
+    if ([firstBit isEqualToString:@"ноября"]) {
+        firstBit = @"ноябрь ";
+        text = [firstBit stringByAppendingString:[foo objectAtIndex: 1]];
+    }
+    if ([firstBit isEqualToString:@"декабря"]) {
+        firstBit = @"декабрь ";
+        text = [firstBit stringByAppendingString:[foo objectAtIndex: 1]];
+    }
+    
     text = usesUpperCase ? text.uppercaseString : text;
     cell.titleLabel.text = text;
     [cell setNeedsLayout];
